@@ -1,0 +1,21 @@
+@use 'variables'
+
+@mixin button
+  background-color: variables.$primary-color
+  color: variables.$secondary-color
+  padding: 10px 20px
+  border: none
+  border-radius: variables.$border-radius
+  cursor: pointer
+  font-size: 16px
+  transition: variables.$transition
+
+  &:hover
+    background-color: darken(variables.$primary-color, 10%)
+
+@mixin input
+  padding: 10px
+  border: 2px solid variables.$primary-color
+  border-radius: variables.$border-radius
+  font-size: 16px
+  width: 100%
