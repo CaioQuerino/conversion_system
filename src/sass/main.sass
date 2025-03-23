@@ -1,25 +1,24 @@
 @use 'variables'
 @use 'utilities'
 
+@include utilities.reset
+reset
+
 body
   font-family: Arial, sans-serif
   background-color: variables.$background-color
   color: variables.$font-color
-  display: flex
+  display: grid
   justify-content: center
   align-items: center
   height: 85vh
-  margin: 0
+  @include utilities.container
 
 .container
   background: variables.$secondary-color
-  max-width: 90rem
-  margin: 0 auto
-  padding: 20px
+  @include utilities.container
   border-radius: variables.$border-radius
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
-  text-align: center
-  width: 300px
 
 h1
   font-size: 2rem

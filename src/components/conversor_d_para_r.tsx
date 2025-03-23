@@ -46,6 +46,7 @@ const ConversorDParaR = memo(() => {
     const [realAmount, setRealAmount] = useState<number | null>(null);
 
     const date = new Date();
+    date.setDate(date.getDate() - 2);
     const dataCotacao = `${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}-${date.getFullYear()}`; // Format date as MM-DD-YYYY
     const { data, error } = useFetch(`https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=%27${dataCotacao}%27&$top=100&$format=json`);
 
@@ -56,8 +57,15 @@ const ConversorDParaR = memo(() => {
         }
     };
 
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const value = parseFloat(e.target.value);
+        if (value >= 0) {
+            setDollarAmount(value);
+        }
+    };
+
     return (
-        <div>
+        <div className='container'>
             {error && <p>Error: {error}</p>}
             {data ? <pre>{JSON.stringify(data, null, 2)}</pre> : 'Loading...'}
 
@@ -66,7 +74,7 @@ const ConversorDParaR = memo(() => {
             <input 
                 type="number" 
                 value={dollarAmount} 
-                onChange={(e) => setDollarAmount(parseFloat(e.target.value))} 
+                onChange={handleInputChange} 
             />
             <button onClick={handleConvert}>Converter</button>
             {realAmount !== null && <p>Valor em Real: {realAmount.toFixed(2)}</p>}

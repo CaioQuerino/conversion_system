@@ -1,4 +1,3 @@
-import './App.css'
 import TodoApp from './components/conversor_d_para_r'
 import Header from './components/Header'
 
