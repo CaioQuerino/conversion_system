@@ -1,48 +1,5 @@
-@use 'variables'
-@use 'utilities'
+@use '1-base/base'
+@use '2-layouts/layouts'
+@use '3-modules/modules'
 
-@include utilities.reset
-reset
 
-body
-  font-family: Arial, sans-serif
-  background-color: variables.$background-color
-  color: variables.$font-color
-  display: grid
-  justify-content: center
-  align-items: center
-  height: 85vh
-  @include utilities.container
-
-.container
-  background: variables.$secondary-color
-  @include utilities.container
-  border-radius: variables.$border-radius
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
-
-h1
-  font-size: 2rem
-  margin-bottom: 20px
-
-input
-  @include utilities.input
-  margin-bottom: 15px
-
-button
-  @include utilities.button
-
-.result
-  font-size: 20px
-  font-weight: bold
-  margin-top: 15px
-
-pre
-    background-color: #f9f9f9
-    border: 1px solid #ddd
-    border-radius: 4px
-    padding: 10px
-    text-align: left
-    white-space: pre-wrap
-    word-wrap: break-word
-    margin-top: 15px
-    font-size: 1.2rem

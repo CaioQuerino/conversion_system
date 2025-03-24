@@ -77,7 +77,7 @@ const ConversorDParaR = memo(() => {
                 onChange={handleInputChange} 
             />
             <button onClick={handleConvert}>Converter</button>
-            {realAmount !== null && <p>Valor em Real: {realAmount.toFixed(2)}</p>}
+            {realAmount !== null && <p className='result'>Valor em Real: {realAmount.toFixed(2)}</p>}
         </div>
     );
 });

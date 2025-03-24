@@ -1,0 +1,12 @@
+@use '../1-base/variables'
+@use '../1-base/utilities'
+
+.App
+  background: variables.$secondary-color
+  @include utilities.container
+  border-radius: variables.$border-radius
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
+
+.container
+  display: grid
+  gap: 20px
