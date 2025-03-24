@@ -46,7 +46,7 @@ const ConversorDParaR = memo(() => {
     const [realAmount, setRealAmount] = useState<number | null>(null);
 
     const date = new Date();
-    date.setDate(date.getDate() - 2);
+    date.setDate(date.getDate() - 3);
     const dataCotacao = `${String(date.getMonth() + 1).padStart(2, '0')}-${String(date.getDate()).padStart(2, '0')}-${date.getFullYear()}`; // Format date as MM-DD-YYYY
     const { data, error } = useFetch(`https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=%27${dataCotacao}%27&$top=100&$format=json`);
 

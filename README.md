@@ -39,7 +39,7 @@ O aplicativo estará disponível em `http://localhost:5173/` (ou porta definida 
 │   ├── components
 │   │   ├── ConversorDParaR.tsx  # Componente principal do conversor
 │   │   ├── Header.tsx           # Cabeçalho da aplicação
-│   ├── styles
+│   ├── sass
 │   │   ├── _variables.sass      # Variáveis globais de estilos
 │   │   ├── _utilities.sass      # Mixins reutilizáveis
 │   │   ├── styles.sass          # Estilos gerais da aplicação

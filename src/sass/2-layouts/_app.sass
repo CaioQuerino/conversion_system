@@ -1,9 +1,9 @@
 @use '../1-base/variables'
-@use '../1-base/utilities'
+@use '../1-base/_mixins'
 
 .App
   background: variables.$secondary-color
-  @include utilities.container
+  @include mixins.container
   border-radius: variables.$border-radius
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1)
 
